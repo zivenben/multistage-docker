@@ -6,5 +6,7 @@ RUN chmod +x app.sh
 
 FROM ubuntu:latest
 COPY --from=builder /app/app.sh .
-HEALTHCHECK CMD echo "healthy"
+HEALTHCHECK CMD test -f /app/app.sh || exit 1
 ENTRYPOINT ["./app.sh"]
+ENV APP_ENV=production
+
