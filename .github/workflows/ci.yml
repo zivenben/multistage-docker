@@ -1,4 +1,4 @@
-name: "Multi stage docker build"
+name: Multi stage docker build
 on:
   push:
     brach: ["main"]
